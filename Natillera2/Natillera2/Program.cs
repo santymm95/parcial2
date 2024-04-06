@@ -28,7 +28,12 @@ class Program
                 interesesTotal += CalcularIntereses(prestamo2, mes);
             }
 
+            Console.WriteLine("\n\n--- Liquidación anual ---");
+            LiquidarAnualmente(ahorroTotal1, ahorroTotal2, multasTotal, interesesTotal, prestamo1, prestamo2);
 
+            Console.Write("\n¿Desea continuar con otro año? (s/n): ");
+            continuar = Console.ReadLine().ToLower() == "s";
         }
-     
-}
+
+        Console.WriteLine("\n¡Gracias por utilizar la Cooperativa Navideña!");
+    }
