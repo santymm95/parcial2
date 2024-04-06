@@ -34,6 +34,44 @@ class Program
 
         Console.WriteLine($"Se ha generado un número entre 0 y {rangoMaximo - 1}. ¡Adivina cuál es!");
 
+        while (!ganador)
+        {
+            for (int i = 1; i <= numJugadores; i++)
+            {
+                Console.Write($"Jugador {i}, ingresa tu número: ");
+                int numeroIngresado;
+                while (!int.TryParse(Console.ReadLine(), out numeroIngresado))
+                {
+                    Console.WriteLine("Por favor ingresa un número válido: ");
+                }
+
+                if (numeroIngresado < numeroAdivinar)
+                {
+                    Console.WriteLine("¡MAYOR!");
+                }
+                else if (numeroIngresado > numeroAdivinar)
+                {
+                    Console.WriteLine("¡MENOR!");
+                }
+                else
+                {
+                    Console.WriteLine("¡HAS GANADO!");
+                    ganador = true;
+                    break;
+                }
+            }
+
+            if (!ganador)
+            {
+                Console.WriteLine("Ningún jugador ha adivinado el número. ¿Desean seguir intentando? (s/n)");
+                char continuar = Console.ReadKey().KeyChar;
+                if (continuar != 's')
+                    break;
+
+                Console.Clear();
+                Console.WriteLine($"Se ha generado un nuevo número entre 0 y {rangoMaximo - 1}. ¡Adivina cuál es!");
+            }
+        }
 
 
     }
