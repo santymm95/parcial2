@@ -37,3 +37,23 @@ class Program
 
         Console.WriteLine("\n¡Gracias por utilizar la Cooperativa Navideña!");
     }
+
+    static double RegistrarAporte(int numMiembro, int mes, out double aporte, out double prestamo)
+    {
+        Console.WriteLine($"\nIngrese los datos para el miembro {numMiembro}, mes {mes}:");
+        Console.Write("Cantidad aportada: $");
+        aporte = double.Parse(Console.ReadLine());
+
+        Console.Write("¿Desea solicitar un préstamo? (s/n): ");
+        if (Console.ReadLine().ToLower() == "s")
+        {
+            Console.Write("Cantidad del préstamo: $");
+            prestamo = double.Parse(Console.ReadLine());
+        }
+        else
+        {
+            prestamo = 0;
+        }
+
+        return aporte;
+    }
