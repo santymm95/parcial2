@@ -29,6 +29,11 @@ class Program
                 rangoMaximo = 100;
                 break;
         }
+        int numeroAdivinar = random.Next(0, rangoMaximo);
+        bool ganador = false;
+
+        Console.WriteLine($"Se ha generado un número entre 0 y {rangoMaximo - 1}. ¡Adivina cuál es!");
+
 
 
     }
