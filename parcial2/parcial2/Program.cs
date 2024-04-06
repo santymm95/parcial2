@@ -13,7 +13,22 @@ class Program
         {
             Console.WriteLine("Por favor ingrese un número válido de jugadores (entre 2 y 4): ");
         }
-
+        int rangoMaximo;
+        switch (numJugadores)
+        {
+            case 2:
+                rangoMaximo = 50;
+                break;
+            case 3:
+                rangoMaximo = 100;
+                break;
+            case 4:
+                rangoMaximo = 200;
+                break;
+            default:
+                rangoMaximo = 100;
+                break;
+        }
 
 
     }
